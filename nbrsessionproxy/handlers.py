@@ -167,7 +167,7 @@ class RSessionProxyHandler(IPythonHandler):
             '--user-identity=' + username,
             '--www-port=' + str(port)
         ]
-        cmd = ["'system(\"" + ' '.join(cmd) + "\")'"]
+        cmd = ["system(\"" + ' '.join(cmd) + "\")"]
         cmd = ['/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/r/3.3.3/bin/R', '-q', '-e'] + cmd
         server_env = os.environ.copy()
 
