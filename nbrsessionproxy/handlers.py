@@ -46,7 +46,7 @@ class RSessionContext(Configurable):
     }, help="R and RStudio environment variables required by rsession.")
 
     cmd = List([
-        '/usr/lib/rstudio/bin/rsession',
+        '/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/rstudio-server/1.1.206/bin/rsession',
         '--standalone=1',
         '--program-mode=server',
         '--log-stderr=1',
@@ -167,7 +167,7 @@ class RSessionProxyHandler(IPythonHandler):
             '--user-identity=' + username,
             '--www-port=' + str(port)
         ]
-
+        cmd = "/cvmfs/soft.computecanada.ca/easybuild/software/2017/avx2/Compiler/intel2016.4/r/3.3.3/bin/R -q -e 'system(" + cmd + ")'"
         server_env = os.environ.copy()
 
         # Seed RStudio's R and RSTUDIO env variables
